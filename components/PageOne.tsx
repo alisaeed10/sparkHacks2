@@ -1,43 +1,55 @@
-'use client'
+"use client";
 import React from "react";
 import styled from "styled-components";
-// import tw from "twin.macro"
+// import ScrollButton from "./ScroolButton";
+
 
 const PageOneContainer = styled.div`
-    display: flex;
-    background-color: #6b7280; /* Use the desired gray color */
-    width: 100vw; /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+`;
+
+const PageOneContent = styled.div`
+  width: 50vw;
 `;
 
 const PageOneStyle = styled.div`
-    font-size: 9rem;
-    width: 100vw; /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
-    color: #000; /* Black color */
-    display: flex;
-    align-items: center; /* Vertically center content */
-    justify-content: center; /* Horizontally center content */
-    text-align: center; /* Center text */
-    font-weight: 800; /* Extra bold */
-    text-transform: uppercase; /* Uppercase text */
+  font-size: 9rem;
+  color: #000;
+  text-align: center;
+  font-weight: 200;
+  margin-top: 15vh;
 `;
 
-export interface IPageOneProps {
+const ButtonContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-bottom: 120px; /* Adjust margin-bottom as needed */
+`;
 
-}
+export interface IPageOneProps {}
 
 const PageOne: React.FunctionComponent<IPageOneProps> = () => {
+  return (
+    <>
+      <PageOneContainer id="Home">
+        <PageOneContent>
+          <PageOneStyle>Home</PageOneStyle>
+          {/* <ButtonContainer>
+            <ScrollButton />
+          </ButtonContainer> */}
+        </PageOneContent>
+      </PageOneContainer>
+    </>
+  );
+};
 
-    return(
-       <>
-        <PageOneContainer id="page1">
-            <PageOneStyle>
-                Page 1
-            </PageOneStyle>
-        </PageOneContainer>
-       </>
-    )
-}
-
-export default PageOne
+export default PageOne;
