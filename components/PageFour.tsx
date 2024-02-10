@@ -9,7 +9,7 @@ const PageFiveContainer = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  background-image: url('../public/stars.webp');
 `;
 
 const PageFiveContent = styled.div`
