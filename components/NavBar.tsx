@@ -1,5 +1,5 @@
-// import Link from 'next/link';
 import {Link} from 'react-scroll';
+
 
 
 export default function NavBar() {
