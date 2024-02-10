@@ -80,7 +80,7 @@ const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
             home. Select your preferred workout, each accompanied by detailed
             descriptions and instructional videos, empowering you to customize
             your fitness journey to match your goals and preferences. Take the
-            first step towards a healthier, stronger you—click 'Learn More' to
+            first step towards a healthier, stronger you—click &apos;Learn More&apos; to
             unlock the secrets to effective at-home fitness.
           </SmallText>
           <ButtonContainer>

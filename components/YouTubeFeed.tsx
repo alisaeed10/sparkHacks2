@@ -2,7 +2,7 @@
 //components/YouTubeFeed.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import './YouTubeFeed.css'; // Make sure to create this CSS file
+import './YouTubeFeed.css';
 
 
 type YouTubeVideoProps = {
@@ -12,41 +12,58 @@ type YouTubeVideoProps = {
 
 const YouTubeVideo = React.forwardRef<HTMLIFrameElement, YouTubeVideoProps>(
   ({ videoId, shouldAutoPlay }, ref) => {
-    const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+    const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+    //const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+    const handleMouseEnter = () => {
+      if (iframeRef.current) {
+        iframeRef.current.src += "&autoplay=1"; // Start playback
+      }
+    };
+
+    const handleMouseLeave = () => {
+      if (iframeRef.current) {
+        const src = iframeRef.current.src.replace("&autoplay=1", "");
+        iframeRef.current.src = src; // Stop playback
+      }
+    };
 
     return (
       <iframe
-        ref={ref}
+        ref={iframeRef}
         className="youtube-video"
         width="560"
         height="315"
-        src={src}
+        src={`https://www.youtube.com/embed/${videoId}?mute=1`}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         title="YouTube video player"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       />
     );
-  }
-);
+  });
 
 YouTubeVideo.displayName = 'YouTubeVideo';
 
 type YouTubeFeedProps = {
   apiKey: string | undefined;
+  query: string;
 };
 
-const YouTubeFeed = ({ apiKey }: YouTubeFeedProps) => {
+const YouTubeFeed = ({ apiKey, query }: YouTubeFeedProps) => {
   const [videos, setVideos] = useState<string[]>([]);
   const videoRefs = useRef<(HTMLIFrameElement | null)[]>([]);
 
   const fetchVideos = async () => {
+
     try {
       const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
           part: 'snippet',
           maxResults: 10,
-          q: 'gym proper form',
+          q: query+" proper form",
           type: 'video',
           key: apiKey,
         },
@@ -59,7 +76,7 @@ const YouTubeFeed = ({ apiKey }: YouTubeFeedProps) => {
 
   useEffect(() => {
     fetchVideos();
-  }, [apiKey]);
+  }, [apiKey, query]);
   
 
   useEffect(() => {
