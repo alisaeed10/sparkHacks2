@@ -1,4 +1,3 @@
-// //ScrollButton.js
 // import styled from "styled-components";
 // import React, { useState } from "react";
 // import { FaArrowCircleDown } from "react-icons/fa";
@@ -29,11 +28,7 @@
 
 //   const toggleVisible = () => {
 //     const scrolled = document.documentElement.scrollTop;
-//     if (scrolled > 0) {
-//       setVisible(false);
-//     } else if (scrolled <= 0) {
-//       setVisible(true);
-//     }
+//     setVisible(true);
 //   };
 
 //   const scrollToBottom = () => {

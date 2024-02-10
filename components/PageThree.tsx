@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
+// import ScrollButton from "./ScroolButton";
 
 
 const PageThreeContainer = styled.div`
@@ -15,6 +16,7 @@ const PageThreeContainer = styled.div`
 
 const PageThreeContent = styled.div`
   width: 50vw;
+  margin-bottom: 17vh;
 `;
 
 const PageThreeStyle = styled.div`
@@ -22,7 +24,7 @@ const PageThreeStyle = styled.div`
   color: #000;
   text-align: center;
   font-weight: 200;
-  margin-top: 15vh;
+  margin-top: 7vh;
 `;
 
 const SmallText = styled.p`
@@ -30,7 +32,7 @@ const SmallText = styled.p`
   color: #000;
   text-align: center;
   font-weight: 200;
-  margin-top: 15vh;
+  margin-top: 5vh;
 `;
 
 const ButtonContainer = styled.div`
@@ -64,7 +66,7 @@ const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
     <>
       <PageThreeContainer id="AtHomeWorkOuts">
         <PageThreeContent>
-          <PageThreeStyle>At Home Work Outs</PageThreeStyle>
+          <PageThreeStyle>Home Work Outs</PageThreeStyle>
           <SmallText>
             Transform Your Home into Your Personal Gym! Dive into our At-Home
             Workout Section for a wealth of exercise routines tailored
@@ -80,6 +82,9 @@ const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
           <ButtonContainer>
             <Button>Click Here For More</Button>
           </ButtonContainer>
+          {/* <ButtonContainer>
+            <ScrollButton />
+          </ButtonContainer> */}
         </PageThreeContent>
       </PageThreeContainer>
     </>

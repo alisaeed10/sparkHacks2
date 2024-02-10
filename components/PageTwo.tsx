@@ -11,6 +11,7 @@ const PageFiveContainer = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #fff;
+  
 `;
 
 const PageFiveContent = styled.div`
@@ -22,7 +23,7 @@ const PageFiveStyle = styled.div`
   color: #000;
   text-align: center;
   font-weight: 200;
-  margin-top: 9vh;
+  margin-bottom: 12vh;
 `;
 
 const SmallText = styled.p`

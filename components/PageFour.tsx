@@ -14,6 +14,7 @@ const PageFiveContainer = styled.div`
 
 const PageFiveContent = styled.div`
   width: 50vw;
+  margin-bottom: 20vh;
 `;
 
 const PageFiveStyle = styled.div`
