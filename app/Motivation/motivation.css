@@ -1,8 +1,14 @@
 .motivation{
-    background-color: bisque;
+    background-color: rgb(253, 253, 253);
+    height: 100vh;
+    background-image: url('../../public/stars.png');
+}
+.motivation-navbar{
+    display: flex;
+    height: 12vh;
     background-image: url('../../public/images.png');
-    height: 10vh;
-    z-index: -1;
+    color: rgb(253, 253, 253);
+    text-shadow: 2px 2px 4px #ffffff;
 }
 .motivation-container {
     display: flex;
@@ -16,20 +22,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
     position: relative;
-    top: 8rem;
+    top: 2rem;
     right: 0%;
 }
 .motivation-title{
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 600;
     border-bottom: 2px solid rgb(0, 0, 0);
-    text-shadow: 1px 2px 4px #000000;
+        font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';
+    font-style: normal;
 }
 .motivation-subtitle{
     font-size: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 .motivation-choice-container{
     display: flex;
@@ -49,24 +55,24 @@
     position: relative;
     top: 30rem;
 } */
-.quote{
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 2rem;
+.quote-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    top: 5rem;
-    padding: 2rem 2rem;
-    color: black;
+    top: 22rem;
 }
-.quote-button{
-    position: relative;
-    top: 11rem;
-    background-color: black;
-    color: rgb(7, 7, 7);
+.quote{
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    width: 75%;
+    text-align: center;
 }
 .motivation-content-container-youtube-shorts{
     position: relative;
-    top: 20rem;
+    top: 12rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,12 +83,41 @@
     gap: 5rem;
 }
 .youtubeShort{
-    width: 20rem;
-    height: 20rem;
+    width: 10rem;
+    height: 10rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    font-weight: 600;
-    color: black;
+}
+.motivation-navbar-buttons-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem 2rem;
+}
+.motivation-navbar-button{
+    color: rgb(249, 249, 249);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.youtubeShort-videos{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+.youtube-next-button{
+    margin-left: 3rem;
+    font-size: 2.5rem;
+}
+.youtube-prev-button{
+    margin-right: 3rem;
+    font-size: 2.5rem;
+}
+.next-quote{
+    color: white;
+    background-color: #000000;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-size: small;
 }

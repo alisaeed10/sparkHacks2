@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
 import styled from "styled-components";
@@ -61,6 +62,9 @@ const Button2 = styled.button`
 export interface IPageTwoProps {}
 
 const PageTwo: React.FunctionComponent<IPageTwoProps> = () => {
+  const motivation = () => {
+    window.location.href = '/Motivation';
+  }
   return (
     <>
       <PageFiveContainer id="Motivation">
@@ -77,7 +81,7 @@ const PageTwo: React.FunctionComponent<IPageTwoProps> = () => {
             unleash your full potential today
           </SmallText>
           <ButtonContainer>
-            <Button2>Click Here For More</Button2>
+            <Button2 onClick={()=> motivation()}>Click Here For More</Button2>
           </ButtonContainer>
           {/* <ButtonContainer>
             <ScrollButton />

@@ -1,9 +1,13 @@
+/* eslint-disable react/no-deprecated */
 
 "use client"
 //components/YouTubeFeed.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './motivation.css';
+import ReactDOM from 'react-dom';
+import { SlArrowRight } from "react-icons/sl";
+import { SlArrowLeft } from "react-icons/sl";
 
 type YouTubeVideoProps = {
   videoId: string;
@@ -15,17 +19,19 @@ const YouTubeVideo = React.forwardRef<HTMLIFrameElement, YouTubeVideoProps>(
     const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
 
     return (
-      <iframe
-        ref={ref}
-        width="800"
-        height="600"
-        src={src}
-        frameBorder="10"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="YouTube video player"
+        
+        <iframe
+            ref={ref}
+            width="600"
+            height="400"
+            src={src}
+            frameBorder="10"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="YouTube video player"
 
-      />
+        />
+
     );
   }
 );
@@ -38,6 +44,8 @@ type YouTubeFeedProps = {
 
 const YoutubeShorts = ({ apiKey }: YouTubeFeedProps) => {
   const [videos, setVideos] = useState<string[]>([]);
+  const [index, setIndex] = useState<number>(0);
+// const [videos,setVideos] = useState<string>("");
   const videoRefs = useRef<(HTMLIFrameElement | null)[]>([]);
 
   const fetchVideos = async () => {
@@ -45,13 +53,14 @@ const YoutubeShorts = ({ apiKey }: YouTubeFeedProps) => {
       const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
           part: 'snippet',
-          maxResults: 1,
-          q: 'gym motivation speeches',
+          maxResults: 100,
+          q: 'gym motivation speech short videos',
           type: 'shorts',
           videoduration: 'short',
           key: apiKey,
         },
       });
+      //console.log('response', response.data.items["shorts"]);
       setVideos(response.data.items.map((item: any) => item.id.videoId));
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -134,18 +143,27 @@ const YoutubeShorts = ({ apiKey }: YouTubeFeedProps) => {
       });
     };
   }, [videos]);
-
+const prevVideo = (index:number) => {
+    if(index > 0) {
+        setIndex(preIndex => preIndex - 1);
+    }
+}
+const nextVideo = () => {
+    setIndex(preIndex => preIndex + 1);
+    if(index >= videos.length) {
+        fetchVideos();
+        setIndex(preIndex => preIndex + 1);
+        
+    }
+}
   return (
     <div className='youtubeShort-conatiner'>
     <div className='youtubeShort'>
-      {videos.map((videoId, index) => (
-        <YouTubeVideo
-          key={videoId}
-          videoId={videoId}
-          shouldAutoPlay={false}
-          ref={(el) => (videoRefs.current[index] = el)}
-        />
-      ))}
+        <button className="youtube-prev-button" onClick={() => prevVideo(index)}><SlArrowLeft /></button>
+        <div className="youtubeShort-videos">
+            {index >= 0 && <YouTubeVideo videoId={videos[index]} shouldAutoPlay={false} ref={(el) => (videoRefs.current[index] = el)}/> }
+      </div>
+      <button className="youtube-next-button" onClick={() => nextVideo()}><SlArrowRight /></button>
     </div>
     </div>
   );

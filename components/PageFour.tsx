@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
 import styled from "styled-components";
@@ -60,19 +61,16 @@ const Button = styled.button`
 `;
 
 export interface IPageFiveProps {}
-
 const PageFive: React.FunctionComponent<IPageFiveProps> = () => {
-  // const router = useRouter(); // Initialize useNavigate
-  
-  // // Function to handle click
-  // const handleClick = () => {
-  //   router.push('/GymTechnique'); // Navigate to target page on click
-  // };
+  const technique = () => {
+    window.location.href = '/GymTechnique';
+  }
   return (
     <>
       <PageFiveContainer id="Technique">
         <PageFiveContent>
           <PageFiveStyle>Technique</PageFiveStyle>
+          
           <SmallText>
             Refine Your Gym Routine with Proven Techniques! Explore our
             Technique Section for a treasure trove of workout wisdom sourced
@@ -85,10 +83,8 @@ const PageFive: React.FunctionComponent<IPageFiveProps> = () => {
             fitness aspirations with precision and confidence!
           </SmallText>
           <ButtonContainer>
-          <Link href="/GymTechnique" passHref>
-            <Button as="a">Click Here For More</Button>
-          </Link>
-        </ButtonContainer>
+            <Button onClick={() => technique()}>Click Here For More</Button>
+          </ButtonContainer>
         </PageFiveContent>
       </PageFiveContainer>
     </>
