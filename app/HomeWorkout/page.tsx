@@ -2,14 +2,13 @@
 // app/gymTechnique/page.tsx
 import React from 'react';
 import styled from 'styled-components';
-import YouTubeFeed from '../../components/YouTubeFeed';
-import NavBarNoScroll from '../../components/NavBarNoScroll';
+import YouTubeFeedSec from '../../components/YouTubeFeedSec';
+import NavBarNoScrollSec from '../../components/NavBarNoScrollSec';
 import '../../components/background.css';
-
 
 const SectionTitle = styled.h2`
     // color: #fb9e72; // Adjust to match your design
-    background-image: url('../public/images.png');
+    background-image: url('../../public/images.png');
     text-align: center;
     text-transform: uppercase;
     text-bold: 20px;
@@ -27,7 +26,7 @@ const RecommendationTitle = styled.h2`
     font-size: 38px; // Adjust to match your design
     // color: #999999; // Adjust to match your design
     
-    background-image: url('../public/images.png');
+    background-image: url('../../public/images.png');
     text-align: center;
     font-family: 'Helvetica Neue', Arial, sans-serif; /* This is a guess, you might need to adjust the font family */
     font-size: 24px; /* Adjust the size as needed */
@@ -41,7 +40,7 @@ const RecommendationTitle = styled.h2`
 `;
 
 
-export default function GymTechnique() {
+export default function HomeWorkout() {
     const apiKey = 'AIzaSyAd6E4KAFLYHDeNGcLIHsqgCeu_I4SV9ls'; // Ensure this is set in your .env.local file
     const [query, setQuery] = React.useState('gym proper form');
 
@@ -49,11 +48,11 @@ export default function GymTechnique() {
         setQuery(searchTerm);
     };
     return (
-        <main className='conainter-background'style={{ overflowY: 'scroll', height: '100vh'}}>
-            <SectionTitle>Proper Techniques</SectionTitle>
-            <NavBarNoScroll onSearch={handleSearch}/> 
-            <RecommendationTitle>Recommended</RecommendationTitle>
-            <YouTubeFeed apiKey={apiKey} query={query}/>
+        <main className='conainter-background' style={{ overflowY: 'scroll', height: '100vh'}}>
+            <SectionTitle>Workout From Home</SectionTitle>
+            <NavBarNoScrollSec onSearch={handleSearch}/> 
+            <RecommendationTitle>Recommended Workouts</RecommendationTitle>
+            <YouTubeFeedSec apiKey={apiKey} query={query}/>
         </main>
     );
 }

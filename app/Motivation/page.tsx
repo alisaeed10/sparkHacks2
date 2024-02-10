@@ -11,7 +11,7 @@ export default function Motivation() {
     window.location.href = '/';
   }
   const homeWorkouts = () => {
-    window.location.href = '/Athomeworkouts';
+    window.location.href = '/HomeWorkout';
   }
   const technique = () => {
     window.location.href = '/GymTechnique';
@@ -26,7 +26,7 @@ export default function Motivation() {
             <div>
                 <ul className = "hidden sm:flex">
                     <li className = "ml-10 uppercase hover:border-b text-xl"><button onClick={() => homePage()}>Home</button></li>
-                    <li className = "ml-10 uppercase hover:border-b text-xl"><button onClick={() => homeWorkouts()}>At Home WorkOuts</button></li>
+                    <li className = "ml-10 uppercase hover:border-b text-xl"><button onClick={() => homeWorkouts()}>Home-WorkOuts</button></li>
                     <li className = "ml-10 uppercase hover:border-b text-xl"><button onClick={() => technique()}>Technique</button></li>
                 </ul>
             </div>

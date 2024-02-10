@@ -1,0 +1,16 @@
+.youtube-feed-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fbb682; /* peach color */
+  padding: 20px 0; /* Adds vertical space above and below the video list */
+  background-image: url('../public/images.png');
+}
+
+.youtube-video {
+  width: 315px; /* Set width to make the video a square */
+  height: 315px; /* Height equal to width to make it a square */
+  margin-bottom: 20px; /* Adds space between videos */
+  border: 5px solid #faddc8; /* lighter peach border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow around the video */
+}

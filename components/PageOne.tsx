@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ScrollButton from "./ScroolButton";
+import './background.css';
 
 const PageOneContainer = styled.div`
   display: flex;
@@ -28,21 +29,21 @@ const Heading4 = styled.h4`
 `;
 
 const Heading3 = styled.h3`
-  font-size: 14px;
+  font-size: 1rem;
   margin-bottom: 50px;
 `;
 
 const PageOneContent = styled.div`
   width: 50vw;
   top: 50%;
-  text-align: left;
+  text-align: center;
   margin-top: 20px; /* Move text down */
-  margin-left: 130px; /* Move text to the right */
+  margin-left: 400px; /* Move text to the right */
 `;
 
 const PageOneStyle = styled.div`
   font-size: 9rem;
-  color: #000;
+  color: white;
   // text-align: center;
   font-weight: 9rem;
   margin-top: 15vh;
@@ -62,20 +63,20 @@ const PageOne: React.FunctionComponent = () => {
   const texts = [
     "Improvement",
     "Dedication",
-    "A Happier Better You",
+    "A Happier You",
     "Confidence",
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 2000); // Change text every 2 seconds
+    }, 2500); // Change text every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <>
+    <div className="conainter-background">
       <PageOneContainer id="Home">
         <PageOneContent>
           <PageOneStyle>
@@ -99,7 +100,7 @@ const PageOne: React.FunctionComponent = () => {
           </ButtonContainer>
         </PageOneContent>
       </PageOneContainer>
-    </>
+    </div>
   );
 };
 

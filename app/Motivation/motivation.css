@@ -1,13 +1,13 @@
 .motivation{
     background-color: rgb(253, 253, 253);
     height: 100vh;
-    background-image: url('../../public/stars.png');
+    background-image: url('../../public/images.png');
 }
 .motivation-navbar{
     display: flex;
     height: 12vh;
-    background-image: url('../../public/images.png');
-    color: rgb(253, 253, 253);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-shadow: 2px 2px 4px #ffffff;
 }
 .motivation-container {
@@ -15,7 +15,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: rgb(3, 3, 3)
+    color: rgb(255, 254, 254)
 }
 .motivation-title-container{
     display: flex;
@@ -29,7 +29,7 @@
 .motivation-title{
     font-size: 4rem;
     font-weight: 600;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(251, 251, 251);
         font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';
     font-style: normal;
 }
@@ -48,7 +48,7 @@
 .motivation-choice-title{
     font-size: 2rem;
     font-weight: 600;
-    border-bottom: 2px solid rgb(14, 13, 13);
+    border-bottom: 2px solid rgb(243, 243, 243);
 }
 /* .motivation-content-container{
     border: 2px solid black;
@@ -64,9 +64,9 @@
     top: 22rem;
 }
 .quote{
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: black;
+    color: rgb(255, 255, 255);
     width: 75%;
     text-align: center;
 }
@@ -114,8 +114,8 @@
     font-size: 2.5rem;
 }
 .next-quote{
-    color: white;
-    background-color: #000000;
+    color: rgb(0, 0, 0);
+    background-color:rgb(255, 170, 0);
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     margin-top: 1rem;

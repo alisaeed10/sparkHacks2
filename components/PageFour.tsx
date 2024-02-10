@@ -2,6 +2,8 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
+import Link from 'next/link'; // Import Link from Next.js
+
 
 const PageFiveContainer = styled.div`
   display: flex;
@@ -20,18 +22,19 @@ const PageFiveContent = styled.div`
 
 const PageFiveStyle = styled.div`
   font-size: 9rem;
-  color: #000;
+  color: white;
   text-align: center;
   font-weight: 200;
   margin-top: 15vh;
 `;
 
 const SmallText = styled.p`
-  font-size: 0.9rem;
-  color: #000;
+  font-size: 1rem;
+  color: white;
   text-align: center;
-  font-weight: 200;
+  font-weight: 300;
   margin-top: 15vh;
+
 `;
 
 const ButtonContainer = styled.div`
@@ -40,7 +43,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: black;
+  background-color: rgb(255, 170, 0);
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
@@ -60,11 +63,14 @@ const Button = styled.button`
 
 export interface IPageFiveProps {}
 const PageFive: React.FunctionComponent<IPageFiveProps> = () => {
-  const technique = () => {
-    window.location.href = '/GymTechnique';
-  }
+  // const router = useRouter(); // Initialize useNavigate
+  
+  // // Function to handle click
+  // const handleClick = () => {
+  //   router.push('/GymTechnique'); // Navigate to target page on click
+  // };
   return (
-    <>
+    <div className="conainter-background">
       <PageFiveContainer id="Technique">
         <PageFiveContent>
           <PageFiveStyle>Technique</PageFiveStyle>
@@ -74,18 +80,20 @@ const PageFive: React.FunctionComponent<IPageFiveProps> = () => {
             Technique Section for a treasure trove of workout wisdom sourced
             directly from top fitness influencers on YouTube. Tailor your
             training regimen by selecting your desired workout type, whether
-            it's mastering squats, perfecting deadlifts, or honing your bench
-            press technique. With our 'Learn More' option, dive deeper into each
-            technique's intricacies, empowering you to elevate your fitness
+            it&apos;s mastering squats, perfecting deadlifts, or honing your bench
+            press technique. With our &apos;Learn More&apos; option, dive deeper into each
+            technique&apos;s intricacies, empowering you to elevate your fitness
             game. Get ready to unleash your full potential and achieve your
             fitness aspirations with precision and confidence!
           </SmallText>
           <ButtonContainer>
-            <Button onClick={() => technique()}>Click Here For More</Button>
-          </ButtonContainer>
+          <Link href="/GymTechnique" passHref>
+            <Button as="a">Click Here For More</Button>
+          </Link>
+        </ButtonContainer>
         </PageFiveContent>
       </PageFiveContainer>
-    </>
+    </div>
   );
 };
 

@@ -52,7 +52,7 @@ type YouTubeFeedProps = {
   query: string;
 };
 
-const YouTubeFeed = ({ apiKey, query }: YouTubeFeedProps) => {
+const YouTubeFeedSec = ({ apiKey, query }: YouTubeFeedProps) => {
   const [videos, setVideos] = useState<string[]>([]);
   const videoRefs = useRef<(HTMLIFrameElement | null)[]>([]);
 
@@ -63,7 +63,7 @@ const YouTubeFeed = ({ apiKey, query }: YouTubeFeedProps) => {
         params: {
           part: 'snippet',
           maxResults: 10,
-          q: query+" proper form",
+          q: "how to do" + query + "at home",
           type: 'video',
           key: apiKey,
         },
@@ -139,7 +139,7 @@ const YouTubeFeed = ({ apiKey, query }: YouTubeFeedProps) => {
   );
 };
 
-export default YouTubeFeed;
+export default YouTubeFeedSec;
 
 
 

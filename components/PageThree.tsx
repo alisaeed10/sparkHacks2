@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import ScrollButton from "./ScroolButton";
+import Link from 'next/link'; // Import Link from Next.js
 
 
 const PageThreeContainer = styled.div`
@@ -12,7 +12,7 @@ const PageThreeContainer = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-image: url('../public/stars.webp');
+  // background-image: url('../public/stars.webp');
 `;
 
 const PageThreeContent = styled.div`
@@ -22,17 +22,17 @@ const PageThreeContent = styled.div`
 
 const PageThreeStyle = styled.div`
   font-size: 9rem;
-  color: #000;
+  color: white;
   text-align: center;
   font-weight: 200;
   margin-top: 7vh;
 `;
 
 const SmallText = styled.p`
-  font-size: 0.9rem;
-  color: #000;
+  font-size: 1rem;
+  color: white;
   text-align: center;
-  font-weight: 200;
+  font-weight: 300;
   margin-top: 5vh;
 `;
 
@@ -42,7 +42,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: black;
+  background-color: rgb(255, 170, 0);
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
@@ -64,13 +64,13 @@ export interface IPageThreeProps {}
 
 const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
   const homeWorkouts = () => {
-    window.location.href = "/Athomeworkouts";
+    window.location.href = "/HomeHorkout";
   }
   return (
-    <>
+    <div className="conainter-background">
       <PageThreeContainer id="AtHomeWorkOuts">
         <PageThreeContent>
-          <PageThreeStyle>Home Work Outs</PageThreeStyle>
+          <PageThreeStyle>Home Workouts</PageThreeStyle>
           <SmallText>
             Transform Your Home into Your Personal Gym! Dive into our At-Home
             Workout Section for a wealth of exercise routines tailored
@@ -80,18 +80,17 @@ const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
             home. Select your preferred workout, each accompanied by detailed
             descriptions and instructional videos, empowering you to customize
             your fitness journey to match your goals and preferences. Take the
-            first step towards a healthier, stronger you—click 'Learn More' to
+            first step towards a healthier, stronger you—click &apos;Learn More&apos; to
             unlock the secrets to effective at-home fitness.
           </SmallText>
           <ButtonContainer>
-          <Button onClick={() => homeWorkouts()}>Click Here For More</Button>
-          </ButtonContainer>
-          <ButtonContainer>
-            <ScrollButton />
+            <Link href="/HomeWorkout" passHref>
+              <Button as="a">Click Here For More</Button>
+            </Link>
           </ButtonContainer>
         </PageThreeContent>
       </PageThreeContainer>
-    </>
+    </div>
   );
 };
 

@@ -2,18 +2,16 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import ScrollButton from "./ScroolButton";
+// import ScrollButton from "./ScroolButton";
+import './background.css';
 
 const PageFiveContainer = styled.div`
   display: flex;
-  background-image: url('../public/stars.webp');
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  // background-color: #fff;
-  
 `;
 
 const PageFiveContent = styled.div`
@@ -22,17 +20,17 @@ const PageFiveContent = styled.div`
 
 const PageFiveStyle = styled.div`
   font-size: 9rem;
-  color: #000;
+  color: white;
   text-align: center;
   font-weight: 200;
   margin-bottom: 12vh;
 `;
 
 const SmallText = styled.p`
-  font-size: 0.9rem;
-  color: #000;
+  font-size: 1rem;
+  color: white;
   text-align: center;
-  font-weight: 200;
+  font-weight: 300;
   margin-top: 11vh;
 `;
 
@@ -42,7 +40,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Button2 = styled.button`
-  background-color: black;
+  background-color: rgb(255, 170, 0);
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
@@ -67,7 +65,7 @@ const PageTwo: React.FunctionComponent<IPageTwoProps> = () => {
     window.location.href = '/Motivation';
   }
   return (
-    <>
+    <div className="conainter-background">
       <PageFiveContainer id="Motivation">
         <PageFiveContent>
           <PageFiveStyle>Motivation</PageFiveStyle>
@@ -84,12 +82,12 @@ const PageTwo: React.FunctionComponent<IPageTwoProps> = () => {
           <ButtonContainer>
             <Button2 onClick={()=> motivation()}>Click Here For More</Button2>
           </ButtonContainer>
-          <ButtonContainer>
+          {/* <ButtonContainer>
             <ScrollButton />
-          </ButtonContainer>
+          </ButtonContainer> */}
         </PageFiveContent>
       </PageFiveContainer>
-    </>
+    </div>
   );
 };
 
