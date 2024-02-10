@@ -7,18 +7,16 @@ import PageOne from '../components/PageOne';
 import PageTwo from '../components/PageTwo';
 import PageThree from '../components/PageThree';
 import PageFour from '../components/PageFour';
-// import {GymTechnique} from '../GymTechnique/page';
 
 
 export default function Home() {
   return (
     <main>
-      {/* <NavBar />  */}
-      {/* <PageOne />
+      <NavBar /> 
+      <PageOne />
       <PageTwo />
       <PageThree />
-      <PageFour /> */}
-      {/* <GymTechnique /> */}
+      <PageFour />
     </main>
   );
 }
