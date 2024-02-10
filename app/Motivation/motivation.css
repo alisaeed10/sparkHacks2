@@ -1,13 +1,15 @@
 .motivation{
     background-color: bisque;
-    height: 100vh;
+    background-image: url('../../public/images.png');
+    height: 10vh;
+    z-index: -1;
 }
 .motivation-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: rgb(0, 0, 0);
+    color: rgb(3, 3, 3)
 }
 .motivation-title-container{
     display: flex;
@@ -16,7 +18,7 @@
     justify-content: center;
     margin-top: 2rem;
     position: relative;
-    top: 5rem;
+    top: 8rem;
     right: 0%;
 }
 .motivation-title{
@@ -42,15 +44,45 @@
     font-weight: 600;
     border-bottom: 2px solid rgb(14, 13, 13);
 }
-.motivation-content-container{
+/* .motivation-content-container{
     border: 2px solid black;
     position: relative;
     top: 30rem;
-}
+} */
 .quote{
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: 2rem;
     position: relative;
     top: 5rem;
+    padding: 2rem 2rem;
+    color: black;
+}
+.quote-button{
+    position: relative;
+    top: 11rem;
+    background-color: black;
+    color: rgb(7, 7, 7);
+}
+.motivation-content-container-youtube-shorts{
+    position: relative;
+    top: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.youtube-shorts-container{
+    display: flex;
+    gap: 5rem;
+}
+.youtubeShort{
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
 }
