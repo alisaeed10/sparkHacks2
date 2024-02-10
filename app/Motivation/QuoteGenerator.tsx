@@ -43,7 +43,7 @@ export function QuoteGenerator() {
             
   return (
     <div className="quote-container">
-      <p className="quote" >"{quote}" by:{author}
+      <p className="quote" >"{quote}" by: {author}
         </p>
       <button className='next-quote'onClick={() => generateQuote()}>next quote</button>
     </div>
