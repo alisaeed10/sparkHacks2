@@ -1,127 +1,9 @@
-// import React, { useState, useEffect, useRef } from 'react';
-// import axios from 'axios';
-
-// // Type declarations for the YouTube API (YT)
-// declare global {
-//   interface Window {
-//     onYouTubeIframeAPIReady: () => void;
-//     YT: any;
-//   }
-// }
-
-// const loadYouTubeIframeAPI = () => {
-//   // Ensure the script is only loaded once
-//   if (window.YT) return;
-
-//   const tag = document.createElement('script');
-//   tag.src = 'https://www.youtube.com/iframe_api';
-//   const firstScriptTag = document.getElementsByTagName('script')[0];
-//   if (firstScriptTag && firstScriptTag.parentNode) {
-//     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-//   } else {
-//     // Handle the case where the script could not be inserted, or throw an error
-//     console.error('YouTube IFrame API script could not be inserted');
-//   }
-// };
-
-// // The YouTubeVideo component is responsible for rendering each individual video
-// const YouTubeVideo = React.forwardRef<HTMLDivElement, { videoId: string }>(
-//   ({ videoId }, ref: React.RefObject<HTMLDivElement>) => {
-//     const { videoId } = props;
-
-//     useEffect(() => {
-//       // This function gets called when the YouTube IFrame API is ready
-//       const onYouTubeIframeAPIReady = () => {
-//         if (ref.current) { // Check if the ref is not null
-//           // Create a new YouTube player with the API
-//           new window.YT.Player(ref.current, {
-//             videoId: videoId,
-//             events: {
-//               onReady: (event) => {
-//                 event.target.mute(); // Mute the video to increase chances of autoplaying due to browser restrictions
-//               },
-//             },
-//           });
-//         }
-//       };
-
-//       // Assign the callback to the global scope if the API script is not yet loaded
-//       if (typeof window.YT === 'undefined') {
-//         window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
-//       } else {
-//         // If the script is already loaded, call the function directly
-//         onYouTubeIframeAPIReady();
-//       }
-
-//       // Load the YouTube IFrame API
-//       loadYouTubeIframeAPI();
-
-//       // Cleanup function to unset the global callback when the component is unmounted
-//       return () => {
-//         window.onYouTubeIframeAPIReady = null;
-//       };
-//     }, [videoId]);
-
-//     // Return a div which the YouTube API will use to render the video player
-//     return <div ref={ref}></div>;
-//   }
-// );
-
-// YouTubeVideo.displayName = 'YouTubeVideo';
-
-
-// // The YouTubeFeed component fetches a list of videos and renders them using YouTubeVideo components
-// const YouTubeFeed = ({ apiKey }: { apiKey?: string }) => {
-//   const [videos, setVideos] = useState<string[]>([]);
-//   const videoRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-//   useEffect(() => {
-//     const fetchVideos = async () => {
-//       try {
-//         const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
-//           params: {
-//             part: 'snippet',
-//             maxResults: 10,
-//             q: 'motivation',
-//             type: 'video',
-//             key: apiKey,
-//           },
-//         });
-//         setVideos(response.data.items.map((item: any) => item.id.videoId));
-//       } catch (error) {
-//         console.error('Error fetching videos:', error);
-//       }
-//     };
-
-//     if (apiKey) {
-//       fetchVideos();
-//     }
-//   }, [apiKey]);
-
-//   // Render a div for each video, which will become a YouTube player
-//   return (
-//     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-//       {videos.map((videoId, index) => (
-//         <YouTubeVideo
-//           key={videoId}
-//           videoId={videoId}
-//           ref={(el) => (videoRefs.current[index] = el)}
-//         />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default YouTubeFeed;
-
-
-
-
-
 "use client"
 //components/YouTubeFeed.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import './YouTubeFeed.css'; // Make sure to create this CSS file
+
 
 type YouTubeVideoProps = {
   videoId: string;
@@ -135,6 +17,7 @@ const YouTubeVideo = React.forwardRef<HTMLIFrameElement, YouTubeVideoProps>(
     return (
       <iframe
         ref={ref}
+        className="youtube-video"
         width="560"
         height="315"
         src={src}
@@ -163,7 +46,7 @@ const YouTubeFeed = ({ apiKey }: YouTubeFeedProps) => {
         params: {
           part: 'snippet',
           maxResults: 10,
-          q: 'motivation',
+          q: 'gym proper form',
           type: 'video',
           key: apiKey,
         },
@@ -213,8 +96,20 @@ const YouTubeFeed = ({ apiKey }: YouTubeFeedProps) => {
     };
   }, [videos]);
 
+  // return (
+  //   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+  //     {videos.map((videoId, index) => (
+  //       <YouTubeVideo
+  //         key={videoId}
+  //         videoId={videoId}
+  //         shouldAutoPlay={false}
+  //         ref={(el) => (videoRefs.current[index] = el)}
+  //       />
+  //     ))}
+  //   </div>
+  // );
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div className="youtube-feed-container">
       {videos.map((videoId, index) => (
         <YouTubeVideo
           key={videoId}

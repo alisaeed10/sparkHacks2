@@ -1,6 +1,7 @@
 // app/gymTechnique/page.tsx
 import React from 'react';
 import YouTubeFeed from '../../components/YouTubeFeed';
+import NavBar from '../../components/NavBar';
 
 
 export default function GymTechnique() {
@@ -8,6 +9,8 @@ export default function GymTechnique() {
 
     return (
         <main style={{ overflowY: 'scroll', height: '100vh'}}>
+            <NavBar /> 
+
             <YouTubeFeed apiKey={apiKey} />
         </main>
     );
