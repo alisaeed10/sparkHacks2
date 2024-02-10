@@ -10,10 +10,10 @@ export default function NavBar() {
             {/* <div></div> */}
             <div>
                 <ul className = "hidden sm:flex">
-                    <li className = "ml-10 uppercase hover:border-b text-xl"><Link to="Home" duration={500} offset={-50} style={{ cursor: 'pointer', userSelect: 'none' }}>Home</Link></li>
-                    <li className = "ml-10 uppercase hover:border-b text-xl"><Link to="Motivation" duration={500} offset={-50} style={{ cursor: 'pointer', userSelect: 'none' }}>Motivation</Link></li>
-                    <li className = "ml-10 uppercase hover:border-b text-xl"><Link to="AtHomeWorkOuts" duration={500} offset={-50} style={{ cursor: 'pointer', userSelect: 'none' }}>At Home WorkOuts</Link></li>
-                    <li className = "ml-10 uppercase hover:border-b text-xl"><Link to="Technique" duration={500} offset={-50} style={{ cursor: 'pointer', userSelect: 'none' }}>Technique</Link></li>
+                    <li className = "ml-10 uppercase hover:border-b text-xl"><Link to="Home" duration={500} offset={-50} smooth={true} style={{ cursor: 'pointer', userSelect: 'none' }}>Home</Link></li>
+                    <li className = "ml-10 uppercase hover:border-b text-xl"><Link to="Motivation" duration={500} offset={-50} smooth={true} style={{ cursor: 'pointer', userSelect: 'none' }}>Motivation</Link></li>
+                    <li className = "ml-10 uppercase hover:border-b text-xl"><Link to="AtHomeWorkOuts" duration={500} offset={-50} smooth={true} style={{ cursor: 'pointer', userSelect: 'none' }}>At Home WorkOuts</Link></li>
+                    <li className = "ml-10 uppercase hover:border-b text-xl"><Link to="Technique" duration={500} offset={-50} smooth={true} style={{ cursor: 'pointer', userSelect: 'none' }}>Technique</Link></li>
                     {/* <Link href="/Home">
                         <li className = "ml-10 uppercase hover:border-b text-xl">Home</li>
                     </Link>

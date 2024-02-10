@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
 import styled from "styled-components";
@@ -11,7 +12,7 @@ const PageThreeContainer = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  background-image: url('../../public/images.png');
 `;
 
 const PageThreeContent = styled.div`
@@ -62,6 +63,9 @@ const Button = styled.button`
 export interface IPageThreeProps {}
 
 const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
+  const homeWorkouts = () => {
+    window.location.href = "/Athomeworkouts";
+  }
   return (
     <>
       <PageThreeContainer id="AtHomeWorkOuts">
@@ -80,7 +84,7 @@ const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
             unlock the secrets to effective at-home fitness.
           </SmallText>
           <ButtonContainer>
-            <Button>Click Here For More</Button>
+          <Button onClick={() => homeWorkouts()}>Click Here For More</Button>
           </ButtonContainer>
           {/* <ButtonContainer>
             <ScrollButton />
