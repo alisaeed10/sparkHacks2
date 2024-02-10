@@ -1,0 +1,56 @@
+.motivation{
+    background-color: bisque;
+    height: 100vh;
+}
+.motivation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+}
+.motivation-title-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    position: relative;
+    top: 5rem;
+    right: 0%;
+}
+.motivation-title{
+    font-size: 3rem;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    text-shadow: 1px 2px 4px #000000;
+}
+.motivation-subtitle{
+    font-size: 1.5rem;
+    margin-top: 3rem;
+}
+.motivation-choice-container{
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    position: relative;
+    top: 10rem;
+
+}
+.motivation-choice-title{
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(14, 13, 13);
+}
+.motivation-content-container{
+    border: 2px solid black;
+    position: relative;
+    top: 30rem;
+}
+.quote{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    position: relative;
+    top: 5rem;
+}
