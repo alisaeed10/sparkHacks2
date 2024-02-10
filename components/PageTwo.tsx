@@ -2,16 +2,17 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-// import ScrollButton from "./ScroolButton";
+import ScrollButton from "./ScroolButton";
 
 const PageFiveContainer = styled.div`
   display: flex;
+  background-image: url('../public/stars.webp');
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  // background-color: #fff;
   
 `;
 
@@ -83,9 +84,9 @@ const PageTwo: React.FunctionComponent<IPageTwoProps> = () => {
           <ButtonContainer>
             <Button2 onClick={()=> motivation()}>Click Here For More</Button2>
           </ButtonContainer>
-          {/* <ButtonContainer>
+          <ButtonContainer>
             <ScrollButton />
-          </ButtonContainer> */}
+          </ButtonContainer>
         </PageFiveContent>
       </PageFiveContainer>
     </>

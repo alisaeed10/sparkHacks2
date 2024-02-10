@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-// import ScrollButton from "./ScroolButton";
+import ScrollButton from "./ScroolButton";
 
 
 const PageThreeContainer = styled.div`
@@ -12,7 +12,7 @@ const PageThreeContainer = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-image: url('../../public/images.png');
+  background-image: url('../public/stars.webp');
 `;
 
 const PageThreeContent = styled.div`
@@ -86,9 +86,9 @@ const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
           <ButtonContainer>
           <Button onClick={() => homeWorkouts()}>Click Here For More</Button>
           </ButtonContainer>
-          {/* <ButtonContainer>
+          <ButtonContainer>
             <ScrollButton />
-          </ButtonContainer> */}
+          </ButtonContainer>
         </PageThreeContent>
       </PageThreeContainer>
     </>
