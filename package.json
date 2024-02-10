@@ -15,6 +15,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-scroll": "^1.9.0",
+    "styled": "^1.0.0",
     "styled-components": "^6.1.8",
     "twin.macro": "^3.4.1"
   },
