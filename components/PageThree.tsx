@@ -33,7 +33,6 @@ const PageThree: React.FunctionComponent<IPageThreeProps> = () => {
         <PageThreeContainer id="page3">
             <PageThreeStyle>
                 page 3
-
             </PageThreeStyle>
         </PageThreeContainer>
        </>

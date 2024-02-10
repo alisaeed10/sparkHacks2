@@ -32,7 +32,7 @@ const PageTwo: React.FunctionComponent<IPageTwoProps> = () => {
        <>
         <PageTwoContainer id="page2">
             <PageTwoStyle >
-page 2
+                page 2
             </PageTwoStyle>
         </PageTwoContainer>
        </>
