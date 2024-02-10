@@ -48,6 +48,7 @@ const YoutubeShorts = ({ apiKey }: YouTubeFeedProps) => {
           maxResults: 1,
           q: 'gym motivation speeches',
           type: 'shorts',
+          videoduration: 'short',
           key: apiKey,
         },
       });
