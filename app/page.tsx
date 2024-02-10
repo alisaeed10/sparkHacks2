@@ -1,9 +1,21 @@
 import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import NavBar from '../components/NavBar';
+import PageOne from '../components/PageOne';
+import PageTwo from '../components/PageTwo';
+import PageThree from '../components/PageThree';
+import PageFour from '../components/PageFour';
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div> firt page</div>
+    <main> 
+      <NavBar /> 
+      <PageOne />
+      <PageTwo />
+      <PageThree />
+      {/* <PageFour /> */}
     </main>
   );
 }
