@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import React from 'react';
 import Link from 'next/link';
@@ -6,16 +7,18 @@ import PageOne from '../components/PageOne';
 import PageTwo from '../components/PageTwo';
 import PageThree from '../components/PageThree';
 import PageFour from '../components/PageFour';
+// import {GymTechnique} from '../GymTechnique/page';
 
 
 export default function Home() {
   return (
-    <main> 
-      <NavBar /> 
-      <PageOne />
+    <main>
+      {/* <NavBar />  */}
+      {/* <PageOne />
       <PageTwo />
       <PageThree />
-      {/* <PageFour /> */}
+      <PageFour /> */}
+      {/* <GymTechnique /> */}
     </main>
   );
 }
