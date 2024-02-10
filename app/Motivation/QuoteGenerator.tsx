@@ -2,7 +2,8 @@
 import { use, useEffect, useState } from "react";
 import './motivation.css';
 
-const openAi = process.env.OPEN_AI_API_KEY;
+const openAi = process.env.NEXT_PUBLIC_OPEN_AI_API_KEY;
+
 export function QuoteGenerator() {
     console.log(openAi);
     const [quote, setQuote] = useState("");
@@ -26,7 +27,7 @@ export function QuoteGenerator() {
         generateQuote();
     }, []);
   return (
-    <div className="quote-conatiner">
+    <div className="quote-container">
       <p className="quote">hello {quote}</p>
     </div>
   );
