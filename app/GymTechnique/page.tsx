@@ -42,7 +42,7 @@ const RecommendationTitle = styled.h2`
 
 
 export default function GymTechnique() {
-    const apiKey = 'AIzaSyAd6E4KAFLYHDeNGcLIHsqgCeu_I4SV9ls'; // Ensure this is set in your .env.local file
+    const apiKey = 'AIzaSyDnoU8m5pC4jwtDzh27JCs9sN-VpybTZMA'; // Ensure this is set in your .env.local file
     const [query, setQuery] = React.useState('gym proper form');
 
     const handleSearch = (searchTerm: string) => {
