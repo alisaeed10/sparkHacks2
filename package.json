@@ -13,9 +13,11 @@
     "@emotion/styled": "^11.11.0",
     "axios": "^1.6.7",
     "next": "14.1.0",
+    "openai": "^4.27.0",
     "react": "^18",
     "react-dom": "^18",
     "react-scroll": "^1.9.0",
+    "styled": "^1.0.0",
     "styled-components": "^6.1.8",
     "twin.macro": "^3.4.1"
   },
